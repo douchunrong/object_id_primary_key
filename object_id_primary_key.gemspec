@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ObjectIdPrimaryKey::VERSION
   spec.authors       = ["Matt Pokress"]
   spec.email         = ["mpokress@pillpack.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{ObjectID Primary Keys for ActiveRecord models}
+  spec.description   = %q{Replaces the standard AR autoincrement IDs with ObjectIDs}
   spec.homepage      = ""
   spec.license       = "MIT"
 
