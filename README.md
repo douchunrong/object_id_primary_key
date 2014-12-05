@@ -21,7 +21,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add this include to an existing ActiveRecord model:
+
+```ruby
+class User < ActiveRecord::Base
+  include ObjectIdPrimaryKey
+end
+```
 
 ## Contributing
 
