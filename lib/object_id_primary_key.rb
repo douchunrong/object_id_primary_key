@@ -11,6 +11,6 @@ module ObjectIdPrimaryKey
   private
 
   def set_object_id
-    self.id = BSON::ObjectId.new.to_s
+    self.id = BSON::ObjectId.new.to_s unless self.id.present?
   end
 end
