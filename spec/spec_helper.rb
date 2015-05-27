@@ -1,5 +1,4 @@
 require 'active_record'
-require 'byebug'
 require 'bson'
 require 'object_id_primary_key'
 
