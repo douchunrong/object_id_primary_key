@@ -20,6 +20,8 @@ describe ObjectIdPrimaryKey do
 
     address = Address.create(id: id)
 
+    address.reload
+
     expect(address.id).to eq(id)
   end
 
