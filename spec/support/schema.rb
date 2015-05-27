@@ -8,6 +8,6 @@ ActiveRecord::Schema.define do
     t.string :city
     t.string :state
     t.string :zip
-    t.timestamps
+    t.timestamps null: true
   end
 end
