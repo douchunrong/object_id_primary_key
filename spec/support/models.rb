@@ -1,2 +1,3 @@
-class Address < ObjectIdModel
+class Address < ActiveRecord::Base
+  include ObjectIdPrimaryKey
 end
