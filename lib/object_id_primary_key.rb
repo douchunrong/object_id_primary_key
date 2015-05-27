@@ -12,7 +12,9 @@ module ObjectIdPrimaryKey
   private
 
   def validate_object_id
-    raise 'Invalid ObjectId' if !BSON::ObjectId.legal?(self.id)
+    # Note: This regex is stricter that ObjectId.legal? to exclude newlines
+    # and enforce lowercase hex characters, since SQL is case sensitive.
+    raise 'Invalid ObjectId' unless self.id =~ /\A[0-9a-z]{24}\z/
   end
 
   def set_object_id
