@@ -9,6 +9,16 @@ module ObjectIdPrimaryKey
     before_update :validate_object_id
   end
 
+  def base64_id
+    return Base64.urlsafe_encode64(BSON::ObjectId.from_string(self.id).to_bson)
+  end
+
+  class_methods do
+    def find_by_base64_id(str)
+      return find(BSON::ObjectId.from_data(Base64.urlsafe_decode64(str)).to_s)
+    end
+  end 
+
   private
 
   def validate_object_id
