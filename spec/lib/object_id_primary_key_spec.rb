@@ -30,4 +30,18 @@ describe ObjectIdPrimaryKey do
 
     expect{ address.update_attribute :id, 'BAD_ID' }.to raise_error('Invalid ObjectId')
   end
+
+  describe '#base64_id' do
+    it 'returns the base 64 encoded version of the ID' do
+      address = Address.new(id: '55babee2416c65a98e020000')
+      expect(address.base64_id).to eq('Vbq-4kFsZamOAgAA')
+    end
+  end
+
+  describe '.find_by_base64_id' do
+    it 'finds an object' do
+      address = Address.create(id: '55babee2416c65a98e020000')
+      expect(Address.find_by_base64_id('Vbq-4kFsZamOAgAA')).to eq(address)
+    end
+  end
 end
