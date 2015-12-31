@@ -10,14 +10,16 @@ module ObjectIdPrimaryKey
   end
 
   def base64_id
-    return Base64.urlsafe_encode64(BSON::ObjectId.from_string(self.id).to_bson)
+    # to_bson returns a BSON::ByteBuffer now, which must be explicitly cast to
+    # a string
+    return Base64.urlsafe_encode64(BSON::ObjectId.from_string(self.id).to_bson.to_s)
   end
 
   class_methods do
     def find_by_base64_id(str)
       return find(BSON::ObjectId.from_data(Base64.urlsafe_decode64(str)).to_s)
     end
-  end 
+  end
 
   private
 
