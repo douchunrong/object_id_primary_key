@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.required_ruby_version = '~> 2'
 
-  spec.add_dependency 'bson', '~> 4.0.0'
+  spec.add_dependency 'bson', '~> 4.0'
   spec.add_development_dependency 'rails', '~> 4.2.0'
   spec.add_development_dependency 'rspec-rails', '~> 3.0'
   spec.add_development_dependency 'sqlite3', '~> 1.0'
