@@ -1,3 +1,6 @@
+require 'active_support/concern'
+require 'base64'
+require 'bson'
 require "object_id_primary_key/version"
 
 module ObjectIdPrimaryKey
